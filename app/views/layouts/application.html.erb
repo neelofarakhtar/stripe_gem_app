@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StripeGemApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  <script src="https://js.stripe.com/v3/"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+     <%= link_to "Product", products_path %><br>
+       <%= link_to "Pricing", pricing_path %><br>
+      <% if current_user %>
+      <%#= link_to "BillingPortal", billing_portal_create_path, method: :post %>
+      <%= link_to current_user.email, edit_user_registration_path %><br>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <br>
+      Stripe_customer id:
+      <%= current_user.stripe_customer_id %>
+      <br>
+      Plan:
+      <%= current_user.plan %>
+      <br>
+      Subscription status:
+      <%= current_user.subscription_status %>
+     <% end %>
+    <hr>
+    <%= yield %>
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  </body>
+</html>

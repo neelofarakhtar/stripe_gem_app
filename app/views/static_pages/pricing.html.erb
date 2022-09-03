@@ -1,0 +1,18 @@
+<h1>Pricing</h1>
+
+<%# debugger %>
+<% @pricing =  Stripe::Price.list[:data][0] %><br >
+ Product_Id: <%= @pricing.product %><br >
+ Price_id: <%= @pricing.id %><br >
+  Unit_amount: <%= @pricing.unit_amount/100 %><br >
+  Currency: <%= @pricing.currency %><br >
+  lookup_key: <%= @pricing.lookup_key %><br>
+  <%= link_to "Checkout", checkout_create_path(price: @pricing.id), method: :post, remote: true %>
+  <br >
+<% @price =  Stripe::Price.list[:data][1] %><br >
+ Product_Id: <%= @price.product %><br >
+ Price_id: <%= @price.id %><br >
+  Unit_amount: <%= @price.unit_amount/100 %><br >
+  Currency: <%= @price.currency %><br >
+  lookup_key: <%= @price.lookup_key %><br >
+ <%= link_to "Checkout", checkout_create_path(price: @price.id), method: :post, remote: true %>
