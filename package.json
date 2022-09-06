@@ -8,11 +8,11 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "event-loop-stats": "^1.4.1",
-    "node-gyp": "^9.1.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "engines": {
-    "node": "12.16.2"
+    "node": "12.16.2",
+    "yarn": "1.22.19"
   }
 }
