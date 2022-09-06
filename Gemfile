@@ -58,4 +58,4 @@ gem 'carrierwave', '~> 2.0'
 gem 'stripe'
 gem "jquery-rails"
 gem "money-rails"
-gem 'uglifier', '~> 2.7'
+gem 'uglifier', '~> 4.2'
