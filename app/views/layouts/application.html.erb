@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+     <% if user_signed_in? %>
      <%= link_to "Product", products_path %><br>
        <%= link_to "Pricing", pricing_path %><br>
       <% if current_user %>
@@ -27,9 +30,7 @@
       <%= current_user.subscription_status %>
      <% end %>
     <hr>
+     <% end %>
     <%= yield %>
-     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
-  </body>
+   </body>
 </html>
