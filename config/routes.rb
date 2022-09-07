@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
   resources :products
   root 'homes#index'
   post "checkout/create", to: "checkout#create" 
